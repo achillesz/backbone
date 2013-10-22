@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="gb2312">
+    <title>abc</title>
+</head>
+<body>
+<div style="width:300px; height:300px; background-color:#f00;" id="sidebar">
+
+</div>
+<script src="../test/vendor/underscore.js"></script>
+<script src="../test/vendor/jquery.js"></script>
+<script src="../docs/js/jquery.lazyload.js"></script>
+<script src="../test/vendor/json2.js"></script>
+<script src="../backbone.js"></script>
+<script type="text/javascript">
+    Person = Backbone.Model.extend({
+        urlRoot:"/user",
+        defaults:{
+            name:"a",
+            age:"xxx",
+            child:"2"
+        },
+        initialize:function(){
+
+        }
+    });
+    var person = new Person();
+    var userDetails = {
+        name:"tt",
+        email:'pp'
+    };
+    person.save(userDetails,{
+        success:function(user){
+           alert(user.toJSON());
+        }
+    });
+
+</script>
+</body>
+</html>
