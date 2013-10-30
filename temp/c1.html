@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="gb2312">
+    <title>collection-groupBy</title>
+</head>
+<body>
+
+<script src="../test/vendor/underscore.js"></script>
+<script src="../test/vendor/jquery.js"></script>
+<script src="../docs/js/jquery.lazyload.js"></script>
+<script src="../test/vendor/json2.js"></script>
+<script src="../backbone.js"></script>
+<script type="text/javascript">
+    Person = Backbone.Model.extend({
+        initialize:function(){
+        }
+    });
+
+    var alls = Backbone.Collection.extend({
+        initialize:function(){}
+    });
+
+    var c = new alls;
+
+
+
+    var person1 = new Person({name:"b"});
+    var person2 = new Person({name:"b"});
+    var person3 = new Person({name:"c"});
+
+    c.add(person1);
+    c.add(person2);
+    c.add(person3);
+
+
+    var a = c.groupBy('name');
+
+    console.log(a)
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

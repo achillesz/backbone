@@ -315,6 +315,7 @@
   };
 
   // An internal function used for aggregate "group by" operations.
+  // obj 是数组，value是函数，behavior是函数
   var group = function(obj, value, context, behavior) {
     var result = {};
     var iterator = lookupIterator(value || _.identity);

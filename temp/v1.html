@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="gb2312">
+    <title>collection-sortBy</title>
+</head>
+<body>
+<script type="text/template" id="search_template">
+    <labe>Search</label>
+    <input type="text" id="search_input" />
+    <input type="button" id="search_button" value="Search"/>
+</script>
+<div id="con">
+111
+</div>
+<script src="../test/vendor/underscore.js"></script>
+<script src="../test/vendor/jquery.js"></script>
+<script src="../docs/js/jquery.lazyload.js"></script>
+<script src="../test/vendor/json2.js"></script>
+<script src="../backbone.js"></script>
+<script type="text/javascript">
+    Person = Backbone.View.extend({
+        initialize:function(){
+            this.render();
+        },
+        render:function(){
+            var template = _.template($("#search_template").html(),{});
+            this.$el.html(template);
+        },
+        events:{
+            "click input[type=button]":"doSearch"
+        },
+        doSearch:function(){
+            console.log(this)
+        }
+    });
+    var pp = new Person({el:$('#con')});
+
+
+
+
+</script>
+</body>
+</html>

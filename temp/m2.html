@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="gb2312">
+    <title>save-post</title>
+</head>
+<body>
+<div style="width:300px; height:300px; background-color:#f00;" id="sidebar">
+
+</div>
+<script src="../test/vendor/underscore.js"></script>
+<script src="../test/vendor/jquery.js"></script>
+<script src="../docs/js/jquery.lazyload.js"></script>
+<script src="../test/vendor/json2.js"></script>
+<script src="../backbone.js"></script>
+<script type="text/javascript">
+    Person = Backbone.Model.extend({
+        urlRoot:"/backbone/data/test.php",
+        defaults:{
+            name:"a",
+            age:"xxx",
+            child:"2"
+        },
+        initialize:function(){
+            this.on('change:name',function(){});
+
+        }
+    });
+    var person = new Person();
+    person.set('name',1);
+    var userDetails = {
+        name:"tt",
+        email:'pp'
+    };
+    person.save(userDetails,{
+        success:function(user){
+            console.log(arguments[1])
+        }
+    });
+
+
+
+</script>
+</body>
+</html>

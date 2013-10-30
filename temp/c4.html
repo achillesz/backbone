@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="gb2312">
+    <title>collection-add</title>
+</head>
+<body>
+
+<script src="../test/vendor/underscore.js"></script>
+<script src="../test/vendor/jquery.js"></script>
+<script src="../docs/js/jquery.lazyload.js"></script>
+<script src="../test/vendor/json2.js"></script>
+<script src="../backbone.js"></script>
+<script type="text/javascript">
+    var Person = Backbone.Model.extend({
+        initialize:function(){
+        }
+    });
+
+    var Persons = Backbone.Collection.extend({
+        initialize:function(){}
+    });
+
+    var cp = new Persons();
+
+    cp.on('add',function(model,col){
+        console.log(model.toJSON());
+        console.log(col.toJSON());
+    });
+
+    var person1 = new Person({name:"e"});
+
+    cp.add(person1);
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
